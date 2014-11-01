@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Order no:</strong>
+  <%= @shopcode.order_no %>
+</p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @shopcode.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @shopcode.last_name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @shopcode.email %>
+</p>
+
+<p>
+  <strong>Shop code:</strong>
+  <%= @shopcode.shop_code %>
+</p>
+
+<p>
+  <strong>Store credit:</strong>
+  <%= @shopcode.store_credit %>
+</p>
+
+<p>
+  <strong>Issue date:</strong>
+  <%= @shopcode.issue_date %>
+</p>
+
+<p>
+  <strong>Exp date:</strong>
+  <%= @shopcode.exp_date %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @shopcode.comment %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @shopcode.status %>
+</p>
+
+<%= link_to 'Edit', edit_shopcode_path(@shopcode) %> |
+<%= link_to 'Back', shopcodes_path %>

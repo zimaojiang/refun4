@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  order_no: 1
+  first_name: MyString
+  last_name: MyString
+  email: MyString
+  shop_code: MyString
+  store_credit: 1
+  issue_date: 2014-10-31
+  exp_date: 2014-10-31
+  comment: MyText
+  status: 1
+
+two:
+  order_no: 1
+  first_name: MyString
+  last_name: MyString
+  email: MyString
+  shop_code: MyString
+  store_credit: 1
+  issue_date: 2014-10-31
+  exp_date: 2014-10-31
+  comment: MyText
+  status: 1

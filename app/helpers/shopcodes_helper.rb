@@ -1,0 +1,2 @@
+module ShopcodesHelper
+end
