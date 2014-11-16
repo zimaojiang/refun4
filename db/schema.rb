@@ -11,7 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141031211755) do
+ActiveRecord::Schema.define(version: 20141116184801) do
+
+  create_table "couponsales", force: true do |t|
+    t.integer  "shopcode_id",                            null: false
+    t.integer  "order_no",                               null: false
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "shop_code",                              null: false
+    t.decimal  "amount",        precision: 10, scale: 0
+    t.decimal  "credit",        precision: 10, scale: 0
+    t.date     "purchase_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "couponsales", ["shopcode_id"], name: "index_couponsales_on_shopcode_id", using: :btree
 
   create_table "shopcodes", force: true do |t|
     t.integer  "order_no",                              null: false

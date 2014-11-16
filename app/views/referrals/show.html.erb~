@@ -1,2 +1,7 @@
-<h1>Referrals#view</h1>
-<p>Find me in app/views/referrals/view.html.erb</p>
+<h1>Your Referrals Status</h1>
+Hi! <%= @shopcode.first_name =%>, you have earned $<%= @shopcode.store_credit =%> on your Shopcode: <%= @shopcode.shop_code =%>
+
+<p>
+Thank you for shopping with us, and you can redeem your store_credit when it reach $50
+<p>
+Have a great day!

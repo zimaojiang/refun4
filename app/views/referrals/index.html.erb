@@ -1,18 +1,19 @@
-<h1>My Referrals2</h1>
+<h1>My Referrals</h1>
  <%= form_tag("/referrals/view", method: "get") do %>
 <table>
 	<tr>
 		<td>Enter Your Shopcode:</td>
-		<td><%= text_field_tag("shopcode") %></td>
+		<td><%= flash[:shopcode].nil? ? text_field_tag("shopcode") : text_field_tag("shopcode", flash[:shopcode]) %></td>
 	</tr>
 	<tr>
 		<td>Enter Your Email:</td>
-		<td><%= text_field_tag("email") %></td>
+		<td><%= flash[:email].nil? ? email_field_tag("email") : email_field_tag("email", flash[:email]) %></td>
 	</tr>
 	<tr>
 		<td>&nbsp;</td>
 		<td><%= submit_tag("View") %></td>
 	</tr>
 </table>
-<% end -%>
+<%= flash[:message] %>
+<% end %>
 

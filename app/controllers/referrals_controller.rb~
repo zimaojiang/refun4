@@ -1,9 +1,20 @@
 class ReferralsController < ApplicationController
   before_action :set_shopcode, only: [:view, :show, :index]
 
+  # action to show my referrals
   def show
-#	  format.html { render :view }
-	  @shopcode = Shopcode.find(params[:shopcode, :email])
+	  # if we dont have all the params, we redirect.
+	  if !(params[:shopcode].blank? or params[:email].blank?) 
+		  puts "**** call view_referrals"
+	     @shopcode = Shopcode.view_referrals(params[:shopcode].strip, params[:email].strip)
+	     if !@shopcode
+		 ref_err
+	     end
+
+	  else 
+	     # we render to index 
+		 ref_err
+	  end
   end
 
   def view
@@ -16,13 +27,19 @@ class ReferralsController < ApplicationController
   end
   
   private
+    # we render to index with a err msg.
+    def ref_err
+	text_field_tag[:shopcode] = params[:shopcode]
+	email_field_tag[:email] = params[:email]
+	flash[:message] = "record not found."
+	render :index
+    end
+
     def set_shopcode
-#	   @shopcode = Shopcode.find(params[:shopcode, :email])
-	   @shopcode = Shopcode.find(43)
     end
 
     def shopcode_params
-	parmas.require(:shopcode).permit(:shopcode, :email)
+	parmas.require(:search).permit(:shopcode, :email)
     end
 
 end

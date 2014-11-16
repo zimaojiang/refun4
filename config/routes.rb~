@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  get 'referrals/view' => 'referrals#view'
-  post 'referrals/view' => 'referrals#view'
+  get 'referrals/view/:shopcode:email' => 'referrals#view'
+  post 'referrals/view/:shopcode:email' => 'referrals#view'
 
   resources :referrals
   resources :shopcodes
