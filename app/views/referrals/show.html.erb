@@ -1,18 +1,21 @@
 <h1>Your Referrals Status</h1>
-Hi! <%= @shopcode.first_name =%>, you have earned $<%= @shopcode.store_credit =%> with your Shopcode: <%= @shopcode.shop_code =%>
+Hi! <%= @shopcode.first_name =%>, 
+<p>
+Thank you for shopping with us! You have <br>
+earned $<%= @shopcode.store_credit =%> with your Shopcode: <%= @shopcode.shop_code =%>
 
 <p>
-Thank you for shopping with us, and you can redeem your store_credit when it reach $50
+You can redeem your credit when it reaches $50!
 <p>
-Have a great day!
 
 <!-- use html comment tag -->
 <!-- display the couponsales for the shopcode. -->
+<% if @shopcode.store_credit > 0 %>
 <table>
 	<thead>
 	<tr>
 		<th>Purchase Date</th>
-		<th>First Name</th>
+		<th>Name</th>
 		<th>Amount</th>
 		<th>Credit Earned</th>
 	</tr>
@@ -29,6 +32,8 @@ Have a great day!
 	<% end %>
 	</tbody>
 </table>
+<% end %>
+
 <p>
 <% flash[:backlink]="Y" %>
 <% flash[:message] = "" %>

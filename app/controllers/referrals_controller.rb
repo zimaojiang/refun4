@@ -18,10 +18,6 @@ class ReferralsController < ApplicationController
 	  end
   end
 
-#  def view
-#	  format.html { render :view }
-#	  @shopcode = Shopcode.find(params[:shopcode, :email])
-#  end
 
   # GET /referrals (set in config/routes.rb)
   def index
