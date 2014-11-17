@@ -14,6 +14,12 @@
 		<td><%= submit_tag("View") %></td>
 	</tr>
 </table>
+
+<% if flash[:backlink] %>
+	<% flash[:message] = "" %>
+<% end %>
+
 <%= flash[:message] %>
+
 <% end %>
 

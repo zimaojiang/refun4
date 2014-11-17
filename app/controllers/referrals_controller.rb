@@ -5,22 +5,23 @@ class ReferralsController < ApplicationController
   def show
 	  # if we dont have all the params, we redirect.
 	  if !(params[:shopcode].blank? or params[:email].blank?) 
-		  puts "**** call view_referrals"
 	     @shopcode = Shopcode.view_referrals(params[:shopcode].strip, params[:email].strip)
 	     if !@shopcode
 		 ref_err
+	     else
+	     	# we get the couponsales collection for the view, max is 5.
+	     	@couponsales = @shopcode.couponsales.first(COUPONSALE_MAX)
 	     end
-
 	  else 
 	     # we render to index 
 		 ref_err
 	  end
   end
 
-  def view
-	  format.html { render :view }
-	  @shopcode = Shopcode.find(params[:shopcode, :email])
-  end
+#  def view
+#	  format.html { render :view }
+#	  @shopcode = Shopcode.find(params[:shopcode, :email])
+#  end
 
   # GET /referrals (set in config/routes.rb)
   def index
