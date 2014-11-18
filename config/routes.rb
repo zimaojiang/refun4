@@ -61,4 +61,14 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+ 
+  # Place at last line.
+  # All invalid routes are handled here
+  #
+  # The match only works on Rails 3
+  # match '*' => redirect('/'),  via: [:get, :post]
+
+  # Use get in rails 4
+  # route all invalid url to referrals search page.
+  get '*unmatched_route', :to => redirect('/referrals')
 end
